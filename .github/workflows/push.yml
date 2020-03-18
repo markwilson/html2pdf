@@ -1,0 +1,27 @@
+name: Push
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Build, tag, push to GitHub packages
+      env:
+        GITHUB_USER: markwilson
+        REGISTRY_URL: docker.pkg.github.com/markwilson/html2pdf
+        IMAGE_NAME: html2pdf
+        IMAGE_TAG: latest
+      run: |
+        docker login docker.pkg.github.com -u $GITHUB_USER -p ${{ secrets.GITHUB_ACCESS_TOKEN }}
+        docker build -t $REGISTRY_URL/$IMAGE_NAME:$IMAGE_TAG .
+        docker push $REGISTRY_URL/$IMAGE_NAME:$IMAGE_TAG
+
