@@ -21,7 +21,7 @@ jobs:
         IMAGE_NAME: html2pdf
         IMAGE_TAG: latest
       run: |
-        docker login docker.pkg.github.com -u $GITHUB_USER -p ${{ secrets.GITHUB_ACCESS_TOKEN }}
+        docker login docker.pkg.github.com -u $GITHUB_USER -p ${{ secrets.GH_ACCESS_TOKEN }}
         docker build -t $REGISTRY_URL/$IMAGE_NAME:$IMAGE_TAG .
         docker push $REGISTRY_URL/$IMAGE_NAME:$IMAGE_TAG
 
