@@ -1,4 +1,4 @@
-name: PDF from HTML
+name: html2pdf
 description: |
   Converts HTML files into PDF using chrome-headless-render-pdf
 input:
