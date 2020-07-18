@@ -14,7 +14,9 @@ Converts HTML files into PDF using chrome-headless-render-pdf.
 
 ## Example usage
 
+```
 uses: markwilson/html2pdf@v1
 with:
   htmlPath: 'test.html'
   pdfName: 'test'
+```
