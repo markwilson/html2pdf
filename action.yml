@@ -1,6 +1,9 @@
 name: Convert HTML to PDF
 description: |
   Converts HTML files into PDF using chrome-headless-render-pdf
+branding:
+  icon: file-text
+  color: gray-dark
 input:
   htmlPath:
     required: true
