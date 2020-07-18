@@ -1,4 +1,6 @@
-name: HTML to PDF
+name: PDF from HTML
+description: |
+  Converts HTML files into PDF using chrome-headless-render-pdf
 input:
   htmlPath:
     required: true
