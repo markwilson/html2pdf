@@ -1,0 +1,14 @@
+name: HTML to PDF
+input:
+  htmlPath:
+    required: true
+    default: index.html
+  pdfName:
+    required: true
+    default: output
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+  - ${{ inputs.htmlPath }}
+  - ${{ inputs.pdfName }}
